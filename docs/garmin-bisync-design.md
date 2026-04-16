@@ -184,7 +184,7 @@ sync_state/
 
 ## 9. 日志与可观测性
 - 日志级别：INFO/WARN/ERROR。
-- 所有日志需要做敏感信息脱敏（账号、token、精确位置等），避免凭证或隐私字段落盘。
+- 所有日志需要做敏感信息脱敏（账号、token、user_id、session_id、精确位置、健康指标等），避免凭证或隐私字段落盘。
 - 每轮关键指标：
   - `fetched_cn`, `fetched_global`
   - `cn_only_count`, `global_only_count`

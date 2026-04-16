@@ -152,7 +152,7 @@ sync_state/
 
 ### 6.1 启动流程
 1. 创建并校验 `sync_state/`。
-2. 获取 `.lock` 文件锁（若已有锁则退出）。
+2. 获取 `.lock` 文件锁（若已有锁则退出）；锁文件建议记录 `pid/hostname/started_at`，用于排查与陈旧锁判断。
 3. 加载配置与状态。
 4. 启动调度循环。
 
@@ -184,6 +184,7 @@ sync_state/
 
 ## 9. 日志与可观测性
 - 日志级别：INFO/WARN/ERROR。
+- 所有日志需要做敏感信息脱敏（账号、token、精确位置等），避免凭证或隐私字段落盘。
 - 每轮关键指标：
   - `fetched_cn`, `fetched_global`
   - `cn_only_count`, `global_only_count`
